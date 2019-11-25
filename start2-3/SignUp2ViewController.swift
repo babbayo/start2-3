@@ -58,6 +58,7 @@ class SignUp2ViewController: UIViewController {
     @IBAction func onDone(_ sender: Any) {
         
         UserInfo.shard.created = true
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "createNew"), object: nil)
 //        let view = ViewControlldfer.init()
 //        self.present(view, animated: true, completion: nil)
         self.navigationController?.dismiss(animated: true,

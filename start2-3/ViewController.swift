@@ -25,16 +25,12 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(replaceData), name: NSNotification.Name(rawValue: "createNew"), object: nil)
+    }
+    
+    @objc func replaceData() {
         print("2")
-//        idTextField.text = "333"
-//        if let t1 = UserInfo.shard.created {
-//            if t1 {
-//                if let t2 = UserInfo.shard.id {
-//                    print("come3")
-//                    idTextField.text = t2
-//                }
-//            }
-//        }
+        idTextField.text = UserInfo.shard.id
     }
 
 }
